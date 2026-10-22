@@ -1,0 +1,10 @@
+Symbol,Rows,IndicatorReadyRows,FullBullishSignals,BreakoutSignals,StrongVolumeSignals,BreakoutVolumeEMASignals,BaselineSignals,ValidEntryATRSignals,RejectedEntryATRSignals,SignalsSkippedWhilePositionOpen,ExecutedTrades,SkippedReason
+WIPRO.NS,1236,1216,145,73,148,13,145,18,0.0,127.0,18,
+INFY.NS,1236,1216,0,87,139,7,0,0,0.0,0.0,0,
+TCS.NS,1236,1216,0,74,150,9,0,0,0.0,0.0,0,
+HDFCBANK.NS,1236,1216,0,76,132,13,0,0,0.0,0.0,0,
+RELIANCE.NS,1236,1216,184,77,133,14,184,33,0.0,151.0,33,
+HFCL.NS,1236,1216,239,60,198,18,239,48,0.0,190.0,48,
+TMCV.NS,234,0,0,0,0,0,0,0,,,0,"insufficient data; 234 rows, minimum 260"
+ADANIPORTS.NS,1236,1216,0,75,178,24,0,0,0.0,0.0,0,
+QPOWER.NS,409,389,0,40,68,16,0,0,0.0,0.0,0,
