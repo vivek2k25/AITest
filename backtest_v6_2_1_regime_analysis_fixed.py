@@ -454,9 +454,12 @@ def main():
 
         # One position at a time per symbol: skip signal days while an earlier
         # simulated trade remains open. Entry is on the next trading session.
-        next_available_signal = 0
+        WARMUP_ROWS = 260
+
+        next_available_signal = WARMUP_ROWS
+
         stock_trades = 0
-        for i in range(len(df) - 1):
+        for i in range(WARMUP_ROWS, len(df) - 1):
             if i < next_available_signal:
                 continue
             if not bool(df.iloc[i]["V61_SIGNAL"]):

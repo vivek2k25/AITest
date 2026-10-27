@@ -156,7 +156,8 @@ def calculate_signal_sets(raw: pd.DataFrame):
     # The final row cannot be entered on the following session.
     final_signal_index = len(common_index) - 1
 
-    for i in range(COMMON_WARMUP_ROWS, final_signal_index + 1):
+    # Exclude the last row because next-day entry is impossible.
+    for i in range(COMMON_WARMUP_ROWS, final_signal_index):
 
         date = common_index[i]
 
