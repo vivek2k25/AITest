@@ -318,15 +318,25 @@ def simulate_trade(df, signal_i, symbol):
     reason = "TIME"
 
     for j in range(entry_i, last_i + 1):
+        op = safe_float(df.iloc[j]["Open"])
         hi = safe_float(df.iloc[j]["High"])
         lo = safe_float(df.iloc[j]["Low"])
-        # Conservative daily-candle assumption if both stop and target are touched.
+
+        # For a long trade, account for a gap below the stop.
+        if np.isfinite(op) and op <= stop:
+            exit_i, exit_price, reason = j, op, "STOP"
+            break
+
+        # Otherwise, use the stop price for an intraday stop.
+        # This also preserves conservative stop-before-target handling.
         if lo <= stop:
             exit_i, exit_price, reason = j, stop, "STOP"
             break
+
         if hi >= t2:
             exit_i, exit_price, reason = j, t2, "T2"
             break
+
         if hi >= t1:
             exit_i, exit_price, reason = j, t1, "T1"
             break
