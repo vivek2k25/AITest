@@ -144,7 +144,8 @@ class TestTradeSimulation(unittest.TestCase):
         self.assertAlmostEqual(trade["Exit"], 94.0)
 
         # Verify the gap was below the stop.
-        self.assertLess(df.iloc[1]["Open"], trade["Stop"])
+      
+        self.assertLess(df.iloc[2]["Open"], trade["Stop"])
 
         print("\nGAP TEST PASSED: exit uses gap-down open (94.00), below stop (97.00).")
 

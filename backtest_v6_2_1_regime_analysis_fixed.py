@@ -317,7 +317,7 @@ def simulate_trade(df, signal_i, symbol):
     exit_price = safe_float(df.iloc[last_i]["Close"])
     reason = "TIME"
 
-     for j in range(entry_i, last_i + 1):
+    for j in range(entry_i, last_i + 1):
         op = safe_float(df.iloc[j]["Open"])
         hi = safe_float(df.iloc[j]["High"])
         lo = safe_float(df.iloc[j]["Low"])
